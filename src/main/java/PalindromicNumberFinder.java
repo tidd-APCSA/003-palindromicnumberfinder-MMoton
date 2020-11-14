@@ -30,7 +30,7 @@ public class PalindromicNumberFinder {
     // this is a helper method for searchForPalindromicNum. It's purpose is to test if a number is actually a palindrome
     public boolean testPalindromicNum(int num){
         String maya = reverseNum(num);
-        int num1 = Interger.parseInt(maya);
+        int num1 = Integer.parseInt(maya);
         
         if(num1 == num){
           return true;
@@ -42,7 +42,7 @@ public class PalindromicNumberFinder {
 
     // this is a helper method for testPalindromicNum. It should reverse the number and return it.
     public String reverseNum(int num){
-      String str1 = Interger.toString(num);
+      String str1 = Integer.toString(num);
       String reverse = "";
 
       for(int i = str1.length() - 1; i >= 0; i--){
