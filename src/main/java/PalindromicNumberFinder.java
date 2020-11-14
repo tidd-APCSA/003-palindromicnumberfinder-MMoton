@@ -13,21 +13,42 @@ public class PalindromicNumberFinder {
 
     // this method should find the next palindromic number
     public int searchForPalindromicNum(int num){
-
+        int temp = num;
+        if(getNum() == num){
+          num += 1;
+        }
+        while(testPalindromicNum(num) == false){
+          num += 1;
+        }
+        return num - temp;
     }
+
+
+        
+    
 
     // this is a helper method for searchForPalindromicNum. It's purpose is to test if a number is actually a palindrome
     public boolean testPalindromicNum(int num){
-
-
+        String maya = reverseNum(num);
+        int num1 = Interger.parseInt(maya);
+        
+        if(num1 == num){
+          return true;
+        }else{
+          return false;
+        }
     }
 
 
     // this is a helper method for testPalindromicNum. It should reverse the number and return it.
     public String reverseNum(int num){
+      String str1 = Interger.toString(num);
+      String reverse = "";
 
-
-
+      for(int i = str1.length() - 1; i >= 0; i--){
+        reverse += str1.charAt(i);
+      }
+      return reverse;
     }
 
 
@@ -36,3 +57,4 @@ public class PalindromicNumberFinder {
         return "You'd have to drive " + searchForPalindromicNum(this.num) + " miles";
     }
 }
+
